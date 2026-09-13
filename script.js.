@@ -1,5 +1,52 @@
-function showMessage(category) {
-    alert("You selected: " + category);
-}
+const map = L.map('map').setView([42.315, 69.590], 12);
 
-console.log("EcoMap Shymkent is working!");
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const places = [
+    {
+        name: "🌳 Green Area",
+        type: "green",
+        lat: 42.315,
+        lng: 69.590,
+        info: "A green area in Shymkent."
+    },
+    {
+        name: "🗑️ Waste Zone",
+        type: "waste",
+        lat: 42.325,
+        lng: 69.600,
+        info: "An area where waste can be a problem."
+    },
+    {
+        name: "💧 Water Area",
+        type: "water",
+        lat: 42.305,
+        lng: 69.575,
+        info: "A water area that needs environmental protection."
+    }
+];
+
+const markers = [];
+
+places.forEach(place => {
+    const marker = L.marker([place.lat, place.lng])
+        .addTo(map)
+        .bindPopup(
+            `<b>${place.name}</b><br>${place.info}`
+        );
+
+    marker.category = place.type;
+    markers.push(marker);
+});
+
+function showCategory(category) {
+    markers.forEach(marker => {
+        if (category === "all" || marker.category === category) {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+    });
+}
