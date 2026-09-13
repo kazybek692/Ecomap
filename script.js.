@@ -1,0 +1,5 @@
+function showMessage(category) {
+    alert("You selected: " + category);
+}
+
+console.log("EcoMap Shymkent is working!");
