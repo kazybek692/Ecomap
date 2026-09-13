@@ -3,44 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EcoMap Shymkent</title>
 
+    <!-- Leaflet Map -->
     <link rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
+    <!-- Our CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>🌍 EcoMap Shymkent</h1>
-    <p>Interactive ecological map of Shymkent</p>
-</header>
+    <header>
+        <h1>🌍 EcoMap Shymkent</h1>
+        <p>Interactive ecological map of Shymkent</p>
+    </header>
 
-<div class="controls">
-    <button onclick="showCategory('all')">🌍 All</button>
-    <button onclick="showCategory('green')">🌳 Green Areas</button>
-    <button onclick="showCategory('waste')">🗑️ Waste</button>
-    <button onclick="showCategory('water')">💧 Water</button>
-</div>
+    <div class="controls">
+        <button onclick="showCategory('all')">🌍 All</button>
+        <button onclick="showCategory('green')">🌳 Green Areas</button>
+        <button onclick="showCategory('waste')">🗑️ Waste</button>
+        <button onclick="showCategory('water')">💧 Water</button>
+    </div>
 
-<div id="map"></div>
+    <!-- Map -->
+    <div id="map"></div>
 
-<section class="info">
-    <h2>🌱 About EcoMap</h2>
-    <p>
-        EcoMap Shymkent helps people find green areas
-        and learn about ecological problems in the city.
-    </p>
-</section>
+    <section class="info">
+        <h2>🌱 About EcoMap</h2>
+        <p>
+            EcoMap Shymkent shows ecological areas
+            and environmental problems in the city.
+        </p>
+    </section>
 
-<footer>
-    <p>EcoMap Shymkent © 2026</p>
-</footer>
+    <footer>
+        <p>EcoMap Shymkent © 2026</p>
+    </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="script.js"></script>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
