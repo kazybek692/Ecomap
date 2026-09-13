@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoMap Shymkent</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,44 +15,31 @@
 
 <header>
     <h1>🌍 EcoMap Shymkent</h1>
-    <p>Explore the environment of Shymkent</p>
+    <p>Interactive ecological map of Shymkent</p>
 </header>
 
-<main>
+<div class="controls">
+    <button onclick="showCategory('all')">🌍 All</button>
+    <button onclick="showCategory('green')">🌳 Green Areas</button>
+    <button onclick="showCategory('waste')">🗑️ Waste</button>
+    <button onclick="showCategory('water')">💧 Water</button>
+</div>
 
-    <h2>Ecological Areas</h2>
+<div id="map"></div>
 
-    <div class="cards">
-
-        <div class="card">
-            <h3>🌳 Green Areas</h3>
-            <p>Information about parks and green spaces.</p>
-        </div>
-
-        <div class="card">
-            <h3>🗑️ Waste Zones</h3>
-            <p>Places where waste and pollution can be found.</p>
-        </div>
-
-        <div class="card">
-            <h3>💧 Water</h3>
-            <p>Information about water pollution and clean water.</p>
-        </div>
-
-    </div>
-
-    <h2>🌱 Our Goal</h2>
+<section class="info">
+    <h2>🌱 About EcoMap</h2>
     <p>
-        EcoMap helps people learn about ecological problems
-        and protect nature in Shymkent.
+        EcoMap Shymkent helps people find green areas
+        and learn about ecological problems in the city.
     </p>
-
-</main>
+</section>
 
 <footer>
     <p>EcoMap Shymkent © 2026</p>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 
 </body>
